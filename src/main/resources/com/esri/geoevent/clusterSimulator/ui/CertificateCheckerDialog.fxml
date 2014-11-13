@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="566.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esri.geoevent.clusterSimulator.ui.CertCheckController">
+   <children>
+      <VBox prefHeight="566.0" prefWidth="797.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Allow Connection to Site Following Certificate:" wrappingWidth="571.13671875">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="certText" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="797.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></Text>
+            <HBox alignment="CENTER_RIGHT" fillHeight="false" prefHeight="45.0" prefWidth="750.0" spacing="15.0">
+               <children>
+                  <Button cancelButton="true" mnemonicParsing="false" onAction="#onCancelButtonPushed" text="Cancel" />
+                  <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" onAction="#onOKButtonPushed" text="OK" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
