@@ -17,6 +17,11 @@ local.properties
 .loadpath
 target
 
+# Intellij
+.idea/
+*.iml
+*.iws
+
 # External tool builders
 .externalToolBuilders/
 
