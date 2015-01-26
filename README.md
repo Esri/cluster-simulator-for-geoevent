@@ -1,6 +1,6 @@
 # cluster-simulator-for-geoevent
 
-This Simulator functions as a source of data feeding GeoEvents into a cluster of ArcGIS Servers running GeoEvent Extension.
+This simulator functions as a source of data feeding GeoEvents into a cluster of ArcGIS Servers running the GeoEvent Extension.
 This application is a JavaFX application.
 
 ![App](cluster-simulator-for-geoevent.png?raw=true)
@@ -16,14 +16,14 @@ Building the source code:
 
 ## Requirements
 
-* ArcGIS 10.3.x GeoEvent Extension for Server.
+* ArcGIS 10.3 GeoEvent Extension for Server.
 * Java JDK 1.7 or greater.
 * JavaFX.
 * Maven.
 
 ## Resources
 
-* [ArcGIS GeoEvent Extension for Server Resource Center](http://pro.arcgis.com/share/geoevent-processor/)
+* [ArcGIS GeoEvent Extension for Server Resources](http://links.esri.com/geoevent)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 * [twitter@esri](http://twitter.com/esri)
 
