@@ -25,6 +25,8 @@ package com.esri.geoevent.clusterSimulator;
 
 import java.io.IOException;
 
+import com.esri.geoevent.clusterSimulator.simulator.Simulator;
+
 public class Machine
 {
 	private String name;

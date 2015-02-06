@@ -57,6 +57,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.esri.geoevent.clusterSimulator.simulator.Simulator;
+
 public class ServerAdminClient
 {
 	private String															hostname;
@@ -195,7 +197,6 @@ public class ServerAdminClient
 						}
 						else
 						{
-							System.out.println("Connected to " + machineName);
 							machines.put(machineName, new Machine(machineName, realTimeState, simulator));
 							clusterListener.handle(new ActionEvent());
 						}

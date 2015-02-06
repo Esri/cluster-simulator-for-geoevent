@@ -7,12 +7,18 @@ This application is a JavaFX application.
 
 ## Instructions
 
-Building the source code:
+### Before Building:
 
 1. Open a command prompt in the directory containing the pom.xml file.
 2. Make sure JavaFX is on the classpath with this command "mvn com.zenjava:javafx-maven-plugin:2.0:fix-classpath"   (for details on this, see http://zenjava.com/javafx/maven/fix-classpath.html)
-3. Build the application - "mvn clean jfx:jar" which creates a jar file in the ./target/jfx/app folder.
-4. Now you can run the executable jar file by going to the folder where the jar file is (./target/jfx/app), and running "java -jar <jar-file-name>"
+
+### Building a JAR file
+  1. "mvn clean jfx:jar" which creates a jar file in the ./target/jfx/app folder.
+  2. Now you can run the executable jar file by going to the folder where the jar file is (./target/jfx/app), and running "java -jar <jar-file-name>"
+
+### Building a native executable
+  1. "mvn clean jfx:native", which will place the executable program in "target/jfx/native/bundles"
+  2. This executable can be run directly, if copying it to another location, also copy the subdirectories with the libraries it depends on.
 
 ## Requirements
 

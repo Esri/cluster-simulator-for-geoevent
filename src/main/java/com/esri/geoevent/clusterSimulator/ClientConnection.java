@@ -28,6 +28,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import com.esri.geoevent.clusterSimulator.simulator.Simulator;
+
 public class ClientConnection implements MessageDestination
 {
 	private Socket socket;
@@ -45,13 +47,13 @@ public class ClientConnection implements MessageDestination
 	{
 		socket = new Socket( machine, 5565 );
 		out = socket.getOutputStream();
-		simulator.addListener(this);
+		simulator.addMessageListener(this);
 	}
 	
 	public void disconnect()
 	{
 		out = null;
-		simulator.removeListener(this);
+		simulator.removeMessageListener(this);
 		try {
 			socket.close();
 		} catch (IOException e) 
@@ -69,7 +71,6 @@ public class ClientConnection implements MessageDestination
 			byte[] bytes = (message+"\n").getBytes();
 			out.write(bytes);
 			out.flush();
-			System.out.println( machine + " : " + message);
 		} catch (IOException e) 
 		{
 			tryReconnect();

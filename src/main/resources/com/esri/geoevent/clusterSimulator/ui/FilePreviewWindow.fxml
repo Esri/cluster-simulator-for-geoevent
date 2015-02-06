@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 1995-2014 Esri
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+  For additional information, contact:
+  Environmental Systems Research Institute, Inc.
+  Attn: Contracts Dept
+  380 New York Street
+  Redlands, California, USA 92373
+
+  email: contracts@esri.com
+//-->
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import de.thomasbolz.javafx.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esri.geoevent.clusterSimulator.ui.FilePreviewController">
+   <children>
+      <TextField fx:id="filenameField" layoutX="49.0" layoutY="9.0" prefHeight="25.0" prefWidth="338.0" text="C:\taxis.csv" />
+      <Button fx:id="openButton" layoutX="397.0" layoutY="9.0" mnemonicParsing="false" onAction="#onSimulationFileChooserButtonClicked" prefHeight="25.0" prefWidth="46.0" text="Open" />
+      <Label layoutX="20.0" layoutY="13.0" text="File:" />
+      <CheckBox fx:id="skipCheckbox" layoutX="20.0" layoutY="41.0" mnemonicParsing="false" text="Skip the First " />
+      <TextField fx:id="skipLineTextField" disable="true" layoutX="113.0" layoutY="37.0" prefHeight="25.0" prefWidth="53.0" text="1" />
+      <Label layoutX="172.0" layoutY="41.0" text="Lines" />
+      <Label layoutX="20.0" layoutY="71.0" text="Time Field #" />
+      <TextField fx:id="timeFieldTextField" layoutX="92.0" layoutY="67.0" prefHeight="25.0" prefWidth="73.0" />
+      <TextField fx:id="timeFieldPreview" disable="true" editable="false" layoutX="172.0" layoutY="67.0" />
+      <Button fx:id="loadButton" layoutX="368.0" layoutY="405.0" mnemonicParsing="false" onAction="#onLoad" prefHeight="25.0" prefWidth="73.0" text="Load" />
+      <Button fx:id="cancelButton" layoutX="292.0" layoutY="405.0" mnemonicParsing="false" onAction="#onCancel" prefHeight="25.0" prefWidth="65.0" text="Cancel" />
+      <TextArea fx:id="previewEvents" layoutX="13.0" layoutY="129.0" prefHeight="262.0" prefWidth="426.0" />
+      <Label fx:id="previewDescriptionLabel" layoutX="17.0" layoutY="103.0" text="Preview Events:" />
+   </children>
+</AnchorPane>

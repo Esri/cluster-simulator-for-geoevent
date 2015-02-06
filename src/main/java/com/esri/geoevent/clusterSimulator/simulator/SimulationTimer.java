@@ -21,40 +21,13 @@
 
   email: contracts@esri.com
  */
-package com.esri.geoevent.clusterSimulator;
+package com.esri.geoevent.clusterSimulator.simulator;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.Socket;
+import java.util.Observer;
 
-import com.esri.geoevent.clusterSimulator.simulator.Simulator;
-
-public class ServerConnection implements MessageDestination
+public interface SimulationTimer 
 {
-
-	private Simulator simulator;
-	private OutputStream out;
-
-	public ServerConnection(Socket socket, Simulator simulator) throws IOException 
-	{
-		out = socket.getOutputStream();
-		this.simulator = simulator;
-		simulator.addMessageListener(this);
-	}
-
-	@Override
-	public void send(String message) throws IOException 
-	{
-		byte[] bytes = (message+"\n").getBytes();
-		try
-		{
-			out.write(bytes);
-			out.flush();
-		}catch(IOException ex)
-		{
-			simulator.removeMessageListener(this);
-			throw new IOException( ex.getMessage() );
-		}
-	}
-
+	public void start();
+	public void cancel();
+	public void setTimerObserver( Observer observer );
 }

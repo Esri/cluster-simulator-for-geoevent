@@ -27,6 +27,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import com.esri.geoevent.clusterSimulator.simulator.Simulator;
+
 public class TCPServer implements Runnable
 {
 	private Simulator simulator;

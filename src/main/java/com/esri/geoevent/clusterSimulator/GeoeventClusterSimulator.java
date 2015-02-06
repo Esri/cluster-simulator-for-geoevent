@@ -25,7 +25,6 @@ package com.esri.geoevent.clusterSimulator;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.cert.X509Certificate;
@@ -35,6 +34,9 @@ import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
+
+import com.esri.geoevent.clusterSimulator.simulator.DefaultSimulator;
+import com.esri.geoevent.clusterSimulator.simulator.Simulator;
 
 public class GeoeventClusterSimulator
 {
@@ -104,17 +106,16 @@ public class GeoeventClusterSimulator
 				}
 			}
 			boolean trustAllSSLCerts = cmd.hasOption('t');
+			int period = Integer.parseInt(cmd.getOptionValue('d', "1000"));
 			switch (mode) {
 			case CLIENT:
-				simulator = getSimulator(cmd.getOptionValue('f'), true, cmd.hasOption('l'), batchSize);
+				simulator = getSimulator(cmd.getOptionValue('f'), true, cmd.hasOption('l'), batchSize, period);
 				serverAdminClient = new ServerAdminClient( cmd.getOptionValue('h'), cmd.getOptionValue('u',"siteadmin"), cmd.getOptionValue('p',"password"), simulator, (trustAllSSLCerts) ? new AcceptAlwaysCertChecker() :new CommandLineCertChecker() );
-				simulator.setPeriod(Long.parseLong(cmd.getOptionValue('d', "1000") ));
 				simulator.start();
 				break;
 			case SERVER:
-				simulator = getSimulator(cmd.getOptionValue('f'), false, cmd.hasOption('l'), batchSize);
+				simulator = getSimulator(cmd.getOptionValue('f'), false, cmd.hasOption('l'), batchSize, period);
 				tcpServer = new TCPServer(simulator);
-				simulator.setPeriod(Long.parseLong(cmd.getOptionValue('d', "1000") ));
 				simulator.start();
 				break;
 			default:
@@ -128,7 +129,7 @@ public class GeoeventClusterSimulator
 		}
 	}
 
-	private static Simulator getSimulator(String filename, boolean roundRobinDataToClients, boolean loop, int batchSize ) throws FileNotFoundException 
+	private static Simulator getSimulator(String filename, boolean roundRobinDataToClients, boolean loop, int batchSize, int period ) throws IOException 
 	{
 		if( filename == null )
 			MyOptions.printUsageAndExit();
@@ -138,11 +139,10 @@ public class GeoeventClusterSimulator
 			System.err.println("ERROR File Does not exist : " + filename);
 			System.exit(1);
 		}
-		Simulator simulator = new Simulator( null );
-		simulator.setRoundRobinDataToAllClients(roundRobinDataToClients);
-		simulator.setSimulationFile(simulationFile);
-		simulator.setLoop(loop);
-		simulator.setBatchSize(batchSize);
+		Simulator simulator = new DefaultSimulator();
+		simulator.setSimulationFile(simulationFile,0,0);
+		simulator.setLooping(loop);
+		simulator.setFixedRate(batchSize, period);
 		return simulator;
 	}
 

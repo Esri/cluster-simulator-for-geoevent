@@ -37,7 +37,7 @@ import javafx.stage.WindowEvent;
 
 public class MainApplication extends Application
 {
-	Controller		controller;
+	//Controller		controller;
 	static Stage	primaryStage;
 	
 	static class AppCloser implements EventHandler<WindowEvent>
