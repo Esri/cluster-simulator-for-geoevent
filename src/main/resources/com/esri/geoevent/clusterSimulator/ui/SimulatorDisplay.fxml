@@ -60,8 +60,8 @@
       <Label fx:id="activeSimulationFileLabel" layoutX="201.0" layoutY="230.0" prefHeight="17.0" prefWidth="213.0" text="&lt;No file selected&gt;" />
       <Label fx:id="statusLabel" layoutX="529.0" layoutY="230.0" text="Disconnected" />
       <CheckBox fx:id="continuousLoopCheckbox" layoutX="278.0" layoutY="203.0" mnemonicParsing="false" onAction="#onContinuousLoopClicked" text="Continuous Loop" />
-      <Label layoutX="450.0" layoutY="46.0" text="Admin Name" />
-      <Label layoutX="433.0" layoutY="79.0" text="Admin Password" />
+      <Label layoutX="450.0" layoutY="46.0" text="Username" />
+      <Label layoutX="433.0" layoutY="79.0" text="Password" />
       <TextField fx:id="usernameField" layoutX="535.0" layoutY="41.0" prefHeight="25.0" prefWidth="162.0" text="admin" />
       <PasswordField fx:id="passwordField" layoutX="534.0" layoutY="74.0" prefHeight="25.0" prefWidth="162.0" text="admin" />
       <CheckBox fx:id="trustAllSSLCertificates" layoutX="528.0" layoutY="102.0" mnemonicParsing="false" selected="true" text="Accept All Https Certificates" />
