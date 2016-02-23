@@ -27,7 +27,7 @@
 
 	<groupId>com.esri.geoevent</groupId>
 	<artifactId>geoevent-cluster-simulator</artifactId>
-	<version>10.3.0</version>
+	<version>10.4.0</version>
 	<packaging>jar</packaging>
 
 	<name>GeoEvent Cluster Data Simulator</name>
