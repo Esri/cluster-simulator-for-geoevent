@@ -22,7 +22,7 @@ This application is a JavaFX application.
 
 ## Requirements
 
-* ArcGIS 10.3 GeoEvent Extension for Server.
+* ArcGIS 10.4 GeoEvent Extension for Server.
 * Java JDK 1.7 or greater.
 * JavaFX.
 * Maven.
