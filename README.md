@@ -29,7 +29,7 @@ This application is a JavaFX application.
 
 ## Resources
 
-* [GeoEvent gallery item](http://www.arcgis.com/home/item.html?id=3d4f5f9d26fa47d8930dfb0e019f73a2) on the ArcGIS GeoEvent Extension Gallery
+* [ArcGIS GeoEvent Extension Gallery](http://links.esri.com/geoevent-gallery)
 * [ArcGIS GeoEvent Extension for Server Resources](http://links.esri.com/geoevent)
 * [ArcGIS Blog](http://blogs.esri.com/esri/arcgis/)
 * [twitter@esri](http://twitter.com/esri)
